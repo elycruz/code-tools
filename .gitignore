@@ -1,0 +1,56 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# compiled output
+/dist
+/tmp
+/public/css/app/
+/public/js/common/react-l20n/
+/public/js/common/globals-common-appendix.js
+/server/modules/index/generated-globals-appendix.js
+globals-appendix.js
+
+# dependencies
+/node_modules
+package-lock.json
+
+# IDEs and editors
+.idea/*.iml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/encodings.xml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.convert-react-prop-types-tmp
+
+# Misc.
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+/typings
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+testem.log
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
