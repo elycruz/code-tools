@@ -1,5 +1,5 @@
 # code-tools
-A cli for running different tasks on js-centric repos.
+A cli tool for running common code tasks on code/repos and the like ('release', 'release-candidate', 'bump' commands etc.).
 
 ## Installation:
 Two ways to install:
@@ -28,7 +28,7 @@ $ code-tools [command] [...args] # For command see below
 # - Bump package.json version up on the 'patch' position.
 # - Use updated semver from package.json for other semver operations.
 # - Create release candidate branch, commit changes, and tag changes.
-$ code-tools rc -b develop --package-json=./ui_apps/netsense3/package.json
+$ code-tools rc -b develop --package-json=./some_dir/package.json
 
 # Example 2:
 # - Checkout 'develop' branch,
@@ -36,11 +36,11 @@ $ code-tools rc -b develop --package-json=./ui_apps/netsense3/package.json
 # - ""
 # - Create rc branch, create rc commit, tag commit.
 # - Push changes to 'origin':
-$ code-tools rc -b develop --package-json=./ui_apps/netsense3/package.json --auto-push-remote=origin
+$ code-tools rc -b develop --package-json=./some_dir/package.json --auto-push-remote=origin
 
 # Example 3:  Same as example 2 (except specifying `--semver-part=minor` which is the default).
 $ code-tools rc -b develop \
---package-json=./ui_apps/netsense3/package.json \
+--package-json=./some_dir/package.json \
 --auto-push-remote=origin \
 --semver-part=minor
 
@@ -55,14 +55,14 @@ $ code-tools bump -b develop --version-file=./VERSION
 #   and we are also bumping up the version in 'package.json' file.
 $ code-tools bump \
 --version-file=./VERSION \
---package-json=./ui_apps/netsense3/package.json \
+--package-json=./some_dir/package.json \
 --auto-push-remote=origin 
 
 # Using `--semver` flag - 
 # Bump package.json to version `13.3.3`, create rc commit, tag commit,
 #   push rc branch and tags to 'origin'.
 #   @note `semver` flag also works for `rc` command.
-$ code-tools bump -p=./ui_apps/netsense3/package.json --semver 13.3.3 --auto-push-remote=origin
+$ code-tools bump -p=./some_dir/package.json --semver 13.3.3 --auto-push-remote=origin
 
 # Using latest tag from `git tag` -
 # (using shorthand of `--auto-push-remote`
@@ -72,6 +72,7 @@ $ code-tools bump --from-branch=develop --remote=origin
 
 # Via `rc` command:
 $ code-tools rc --from-branch=develop --remote=origin
+```
 
 ### Commands
 
@@ -142,4 +143,4 @@ version file (`--version-file`/`-v`) if specified.
     they should be shorter.
     
 ## License
-NetSense Sensity License
+MIT
